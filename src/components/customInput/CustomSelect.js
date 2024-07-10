@@ -22,7 +22,7 @@ export default function CustomSelect(props) {
   return (
     <Autocomplete
       // id=""
-      sx={{ width: 300 }}
+      // sx={{ width: 300 }}
       open={open}
       onOpen={() => {
         setOpen(true);
@@ -30,11 +30,12 @@ export default function CustomSelect(props) {
       onClose={() => {
         setOpen(false);
       }}
-      isOptionEqualToValue={(option, value) => option.title === value.title}
-      getOptionLabel={(option) => option.title}
+      isOptionEqualToValue={(option, value) => option.name === value.name}
+      getOptionLabel={(option) => option.name}
       options={options}
       loading={loading}
       onChange={handleChange}
+      value={props.selectedOption}
       renderInput={(params) => (
         <TextField
           {...params}

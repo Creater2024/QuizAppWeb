@@ -38,7 +38,7 @@ export default function Question({ question, index }) {
   };
 
   return (
-    <Card>
+    <Card className="question-container">
       <CardActionArea>
         <div className="question-header">
           <CardContent>

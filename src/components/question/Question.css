@@ -1,3 +1,13 @@
 .horizontal-line {
   border: 1px solid black;
 }
+.question-container {
+  /* box-shadow: 4px 4px 0px 4px rgba(0, 0, 0, 0.5); */
+  margin: 10px;
+  border: 0.5px solid rgba(0, 0, 0, 0.5);
+}
+.select-container {
+  border: 0.5px solid rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  margin: 0px 10px;
+}

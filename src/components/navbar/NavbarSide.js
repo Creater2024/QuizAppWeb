@@ -13,31 +13,57 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
+import LogoutIcon from "@mui/icons-material/Logout";
+import HomeIcon from "@mui/icons-material/Home";
+import QuizIcon from "@mui/icons-material/Quiz";
 import "./Navbar.css";
+import { NavLink } from "react-router-dom";
 export default function NavbarSide() {
   return (
     <div className="navbar_side">
       <Toolbar />
       <Divider />
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+        {["Home", "Practice", "Test"].map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
+            {text === "Practice" ? (
+              <ListItemButton>
+                <ListItemIcon>
+                  <InboxIcon />
+                </ListItemIcon>
+                <NavLink to="/practice">
+                  <ListItemText primary={text} />
+                </NavLink>
+              </ListItemButton>
+            ) : text === "Test" ? (
+              <ListItemButton>
+                <ListItemIcon>
+                  <QuizIcon />
+                </ListItemIcon>
+                <NavLink to="/test">
+                  <ListItemText primary={text} />
+                </NavLink>
+              </ListItemButton>
+            ) : text == "Home" ? (
+              <ListItemButton>
+                <ListItemIcon>
+                  <HomeIcon />
+                </ListItemIcon>
+                <NavLink to="/">
+                  <ListItemText primary={text} />
+                </NavLink>
+              </ListItemButton>
+            ) : null}
           </ListItem>
         ))}
       </List>
       <Divider />
       <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
+        {["Logout"].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {text === "Logout" ? <LogoutIcon /> : null}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
