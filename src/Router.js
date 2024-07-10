@@ -4,13 +4,14 @@ import QuestionPage from "./pages/practice/QuestionPage";
 import BaseLayout from "./layout/BaseLayout";
 import HomePage from "./pages/HomePage";
 import TestCard from "./components/test/TestCard";
+import TestPage from "./pages/test/TestPage";
 export default function Router() {
   return (
     <Routes>
       <Route element={<BaseLayout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/practice" element={<QuestionPage />} />
-        <Route path="/test" element={<TestCard />} />
+        <Route path="/test" element={<TestPage />} />
       </Route>
     </Routes>
   );
